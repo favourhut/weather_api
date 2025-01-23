@@ -16,30 +16,34 @@ class WeatherService:
         self.base_url = Config.WEATHER_API_BASE_URL
         self.api_key = Config.WEATHER_API_KEY
 
-    """Helper method to construct the URL"""
     def _get_url(self, endpoint: str, params: dict) -> str:
+        """Helper method to construct the URL"""
+        
         params["key"] = self.api_key
         url = f"{self.base_url}/{endpoint}"
         return url, params
 
-    """Get current weather data"""
     async def get_current_weather(self, location: str) -> WeatherResponse:
+        """Get current weather data"""
+        
         url, params = self._get_url("current.json", {"q": location})
         async with httpx.AsyncClient() as client:
             response = await client.get(url, params=params)
         response.raise_for_status()  # Will raise an error if the request fails
         return WeatherResponse(**response.json())
 
-    """Get weather forecast"""
     async def get_forecast(self, location: str, days: int) -> ForecastResponse:
+        """Get weather forecast"""
+        
         url, params = self._get_url("forecast.json", {"q": location, "days": days})
         async with httpx.AsyncClient() as client:
             response = await client.get(url, params=params)
         response.raise_for_status()
         return ForecastResponse(**response.json())
 
-    """Get historical weather data"""
     async def get_historical_weather(self, location: str, date: str) -> HistoricalResponse:
+        """Get historical weather data"""
+        
         url, params = self._get_url("history.json", {"q": location, "dt": date})
         async with httpx.AsyncClient() as client:
             response = await client.get(url, params=params)
