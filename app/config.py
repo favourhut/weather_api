@@ -12,3 +12,4 @@ class Config:
 
     WEATHER_API_BASE_URL = "http://api.weatherapi.com/v1"
     WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+    
