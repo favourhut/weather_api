@@ -15,7 +15,7 @@ app = FastAPI(
         )
 
 """Including weather related routes"""
-app.include_routes(weather.router)
+app.include_router(weather.router)
 
 """adding a path operation decorator"""
 @app.get("/", tags=["Root"])
