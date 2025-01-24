@@ -1,0 +1,7 @@
+Here are dependencies to install before running the app
+
+fastapi==0.95.1          # Framework for building APIs
+uvicorn==0.21.1          # ASGI server for running FastAPI
+pydantic==1.10.9         # Data validation and settings management
+python-dotenv==1.0.0     # Manage environment variables
+requests==2.31.0         # Make HTTP requests to WeatherAPI
