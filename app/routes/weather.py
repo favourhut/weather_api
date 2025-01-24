@@ -4,7 +4,7 @@
 
 
 from app.services.weather_service import WeatherService
-from app.schemas.weather import WeatherResponse, ForecastResponse, HistoricalResponse, AlertsResponse, AstronomyResponse
+from app.schemas.weather import ForecastResponse, HistoricalResponse, AlertsResponse, AstronomyResponse
 from fastapi import APIRouter, Depends, HTTPException
 from models import FilteredWeatherResponse
 
