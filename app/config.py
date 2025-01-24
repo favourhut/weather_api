@@ -6,6 +6,7 @@ variables such as API keys"""
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
 
 class Config:
     """This is a class configuration code"""
