@@ -1,10 +1,20 @@
-#!/usr/bin/python3
+#!/usr/binpyython3
 
+<<<<<<< HEAD
+
+"""This file validate and parse the 
+response data from the WeatherAPI"""
+
+=======
 """This file validates and parses the response data from the WeatherAPI"""
 
+>>>>>>> 7e762e1b2d14f84e4fe72c13aee9ad04708ee5c9
 from pydantic import BaseModel
 from typing import List, Optional
 
+<<<<<<< HEAD
+
+=======
 
 # Model for Location metadata
 class Location(BaseModel):
@@ -17,6 +27,7 @@ class Location(BaseModel):
     timezone: str
 
 
+>>>>>>> 7e762e1b2d14f84e4fe72c13aee9ad04708ee5c9
 # Model for Current Weather Response
 class CurrentWeather(BaseModel):
     """Model for the current weather"""
@@ -55,6 +66,11 @@ class ForecastWeatherDay(BaseModel):
 
 class ForecastResponse(BaseModel):
     """Model for Forecast Response"""
+<<<<<<< HEAD
+    location: dict
+    forecast: dict
+
+=======
     location: Location
     forecast: dict  # Using a dict here because it's often a dictionary of dates with forecast details.
 
@@ -73,6 +89,7 @@ class HistoricalWeatherDay(BaseModel):
     hour: List[HourlyWeather]  # List of hourly data for the day
 
 
+>>>>>>> 7e762e1b2d14f84e4fe72c13aee9ad04708ee5c9
 class HistoricalResponse(BaseModel):
     """Model for Historical Weather Response"""
     location: Location
@@ -84,8 +101,11 @@ class AlertsResponse(BaseModel):
     """Model for Alerts Response"""
     alerts: Optional[List[dict]] = None
 
+<<<<<<< HEAD
+=======
 
 # Model for Astronomy (Sunrise/Sunset) Response
+>>>>>>> 7e762e1b2d14f84e4fe72c13aee9ad04708ee5c9
 class AstronomyResponse(BaseModel):
     """Model for Astronomy (Sunrise/Sunset) Response"""
     astronomy: dict
